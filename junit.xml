@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="0.197">
+  <testsuite name="combineUsers" errors="0" failures="0" skipped="0" timestamp="2026-04-19T06:33:33" time="0.164" tests="3">
+    <testcase classname="combineUsers returns an object with users and merge_date" name="combineUsers returns an object with users and merge_date" time="0.002">
+    </testcase>
+    <testcase classname="combineUsers merges arrays correctly" name="combineUsers merges arrays correctly" time="0.001">
+    </testcase>
+    <testcase classname="combineUsers adds today’s date" name="combineUsers adds today’s date" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>

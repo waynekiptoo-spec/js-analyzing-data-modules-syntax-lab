@@ -1,17 +1,26 @@
+const { combineUsers } = require('../index');
 require('datejs');
 
-function combineUsers(...args) {
-  const combinedObject = {
-    users: []
-  };
+describe('combineUsers', () => {
+  test('returns an object with users and merge_date', () => {
+    const result = combineUsers(["A"], ["B"]);
 
-  for (let arr of args) {
-    combinedObject.users.push(...arr);
-  }
+    expect(typeof result).toBe('object');
+    expect(result).toHaveProperty('users');
+    expect(result).toHaveProperty('merge_date');
+  });
 
-  combinedObject.merge_date = Date.today().toString("M/d/yyyy");
+  test('merges arrays correctly', () => {
+    const result = combineUsers(["A"], ["B", "C"]);
 
-  return combinedObject;
-}
+    expect(result.users).toEqual(["A", "B", "C"]);
+  });
 
-module.exports = { combineUsers };
+  test('adds today’s date', () => {
+    const result = combineUsers(["A"]);
+
+    expect(result.merge_date).toBe(
+      Date.today().toString("M/d/yyyy")
+    );
+  });
+});
